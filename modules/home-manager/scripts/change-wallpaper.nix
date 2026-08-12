@@ -24,7 +24,7 @@
             ;;
         esac
 
-        wall_dir="$XDG_PICTURES_DIR/wallpapers"
+        wall_dir="$(xdg-user-dir PICTURES)/wallpapers"
 
         cd "$wall_dir" || exit
 
