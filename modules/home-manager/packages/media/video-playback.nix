@@ -33,6 +33,9 @@
       # quality menu
       F = "script-binding quality_menu/video_formats_toggle";
       "Alt+f" = "script-binding quality_menu/audio_formats_toggle";
+
+      # stable volume
+      n = "cycle_values af loudnorm=I=-15 anull";
     };
 
     config = {
