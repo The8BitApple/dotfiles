@@ -40,6 +40,7 @@
 
     config = {
       keep-open = "yes";
+      osd-on-seek = "no";
 
       vo = "gpu-next";
       hwdec = "vaapi,vulkan,auto";
