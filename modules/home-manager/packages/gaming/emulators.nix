@@ -7,6 +7,7 @@ let
     mesen
     mupen64plus
     swanstation
+    mame
   ]));
 in
 {
