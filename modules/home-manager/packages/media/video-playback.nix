@@ -49,16 +49,25 @@
       sub-border-style = "opaque-box";
     };
   };
-  home.packages = with pkgs; [
-    freetube
-    yt-dlp
 
-    (writeShellApplication {
-      name = "mpvl";
-      runtimeInputs = with pkgs; [ wl-clipboard ];
-      text = ''
-        ${userSettings.terminal.name} --hold -e mpv "$(wl-paste)"
-      '';
-    })
-  ];
+  home = {
+    packages = with pkgs; [
+      freetube
+      yt-dlp
+      python314Packages.bgutil-ytdlp-pot-provider
+
+      (writeShellApplication {
+        name = "mpvl";
+        runtimeInputs = with pkgs; [ wl-clipboard ];
+        text = ''
+          ${userSettings.terminal.name} --hold -e mpv "$(wl-paste)"
+        '';
+      })
+    ];
+
+    file.".config/yt-dlp/plugins/bgutil-ytdlp-pot-provider/yt_dlp_plugins/".source = pkgs.fetchzip {
+      url = "https://github.com/Brainicism/bgutil-ytdlp-pot-provider/releases/latest/download/bgutil-ytdlp-pot-provider.zip";
+      hash = "sha256-tH5tQ20e1PzWjg9K6JJg+6Jevj22vmbZVxoATvxNk4Q=";
+    };
+  };
 }
