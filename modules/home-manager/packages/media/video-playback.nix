@@ -44,9 +44,8 @@
       video-sync = "display-resample";
       interpolation = "yes";
 
-      ytdl-raw-options = "force-ipv4=,extractor-args=\"youtube:player-client=default,-tv_simply\"";
-      ytdl-format = "bestvideo[vcodec^=avc1][height<=1080]+bestaudio";
 
+      ytdl-format = "((bestvideo[height<=?1440][vcodec^=vp9]/bestvideo)+(bestaudio[acodec=opus]/bestaudio[acodec=vorbis]/bestaudio[acodec=aac]/bestaudio))/best";
       sub-border-style = "opaque-box";
     };
   };

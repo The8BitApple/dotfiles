@@ -2,7 +2,6 @@
   imports = [
     ../../modules/home-manager
     ../../overlays
-    ./home-manager/packages/media/video-playback.nix
     ./home-manager/packages/xdg-user-dirs.nix
   ];
 
