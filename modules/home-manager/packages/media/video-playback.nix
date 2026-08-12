@@ -36,14 +36,10 @@
     };
 
     config = {
-      vo = "gpu-next";
-      hwdec = "auto";
-      gpu-api = "opengl";
       keep-open = "yes";
 
-      video-sync = "display-resample";
-      interpolation = "yes";
-
+      vo = "gpu-next";
+      hwdec = "vaapi,vulkan,auto";
 
       ytdl-format = "((bestvideo[height<=?1440][vcodec^=vp9]/bestvideo)+(bestaudio[acodec=opus]/bestaudio[acodec=vorbis]/bestaudio[acodec=aac]/bestaudio))/best";
       sub-border-style = "opaque-box";
